@@ -1,0 +1,35 @@
+{
+    "name": "post2blog",
+    "description" : "Base Level Extension",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "https://69devil.com/*",
+        "http://*/",
+        "https://*/",
+        "<all_urls>", 
+        "webRequest", 
+        "webRequestBlocking",
+        "storage"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+
+    "browser_action": {
+        "default_title": "post2blog",      
+        "default_popup": "popup.html"      
+  },
+  "content_scripts": [
+    {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+            ],
+      "js":[ "content.js"]
+    }
+  ]
+}
